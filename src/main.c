@@ -150,11 +150,11 @@ int main()
   while(!NRF_CLOCK->EVENTS_LFCLKSTARTED);
 
   LED_INIT();
-  if ((NRF_POWER->GPREGRET & 0x80) && ((NRF_POWER->GPREGRET&(0x3<<1))==0)) {
+  // HONTAT: // if ((NRF_POWER->GPREGRET & 0x80) && ((NRF_POWER->GPREGRET&(0x3<<1))==0)) {
     buttonInit(buttonShortPress);
-  } else {
-    buttonInit(buttonIdle);
-  }
+  // HONTAT: //} else {
+  // HONTAT: // buttonInit(buttonIdle);
+  // HONTAT: //}
 
   if  (NRF_POWER->GPREGRET & 0x20) {
     bootedFromBootloader = true;
